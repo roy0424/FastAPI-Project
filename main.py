@@ -92,7 +92,7 @@ def create_food_route(
     return {"id": create_food(db, food=food).id}
 
 
-@app.post("/food/update/{food_id}", response_model=FoodGet)
+@app.post("/food/{food_id}/update", response_model=FoodGet)
 def update_food_route(
     food_id: int,
     food: FoodCreate,
@@ -105,7 +105,7 @@ def update_food_route(
     return updated_food
 
 
-@app.post("/food/delete/{food_id}", response_model=DeleteSchema)
+@app.post("/food/{food_id}/delete", response_model=DeleteSchema)
 def delete_food_route(
     food_id: int,
     db: Session = Depends(get_db),
@@ -223,7 +223,7 @@ def create_category_route(
     return {"id": create_category(db, category=category).id}
 
 
-@app.post("/category/update/{category_id}", response_model=CategoryGet)
+@app.post("/category/{category_id}/update", response_model=CategoryGet)
 def update_category_route(
     category_id: int,
     category: CategoryCreate,
@@ -236,7 +236,7 @@ def update_category_route(
     return updated_category
 
 
-@app.post("/category/delete/{category_id}", response_model=DeleteSchema)
+@app.post("/category/{category_id}/delete", response_model=DeleteSchema)
 def delete_category_route(
     category_id: int,
     db: Session = Depends(get_db),
@@ -349,7 +349,7 @@ def create_brand_route(
     return create_brand(db, brand=brand)
 
 
-@app.post("/brand/update/{brand_id}", response_model=BrandGet)
+@app.post("/brand/{brand_id}/update", response_model=BrandGet)
 def update_brand_route(
     brand_id: int,
     brand: BrandCreate,
@@ -362,7 +362,7 @@ def update_brand_route(
     return updated_brand
 
 
-@app.post("/brand/delete/{brand_id}", response_model=DeleteSchema)
+@app.post("/brand/{brand_id}/delete", response_model=DeleteSchema)
 def delete_brand_route(
     brand_id: int,
     db: Session = Depends(get_db),
@@ -426,7 +426,7 @@ def read_user_route(
     return db_user
 
 
-@app.post("/user/update/{username}", response_model=UserGet)
+@app.post("/user/{username}/update", response_model=UserGet)
 def update_user_route(
     username: str,
     user_data: UserUpdate,
@@ -439,7 +439,7 @@ def update_user_route(
     return updated_user
 
 
-@app.post("/user/delete/{username}", response_model=DeleteUserSchema)
+@app.post("/user/{username}/delete", response_model=DeleteUserSchema)
 def delete_user_route(
     username: str,
     db: Session = Depends(get_db),
