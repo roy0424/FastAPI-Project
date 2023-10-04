@@ -102,7 +102,7 @@ def get_sorted_data(
     return items, total
 ```
 
-* ![Alt text](./foodsAPI.png)
+![Alt text](./foodsAPI.png)
 * DB에 저장되어 있는 식품들의 이름에 대해 **FULLTEXT index**를 추가합니다.
 * sort란에 정렬하고자 하는 칼럼과 정령방식을 입력합니다.
 
