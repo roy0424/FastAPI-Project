@@ -102,5 +102,11 @@ def get_sorted_data(
     return items, total
 ```
 
-* DB에 저장되어 있는 식품들의 이름에 대해 FULLTEXT index를 추가합니다.
 * ![Alt text](./foodsAPI.png)
+* DB에 저장되어 있는 식품들의 이름에 대해 **FULLTEXT index**를 추가합니다.
+* sort란에 정렬하고자 하는 칼럼과 정령방식을 입력합니다.
+
+    ex) "{"column":"protein","order":"desc"},{"column":"fat","order":"asc"}" 입력시 1순위 단백질을 기준 내림차순으로 정렬되고 단백질 함량이 같은 경우 2순위인 지방 기준 오른차순으로 정렬됩니다.
+* food_name란에 찾고자 하는 음식의 이름을 입력합니다.
+
+    ex) 닭가슴살 입력시 -> 스리라차마요닭가슴살, 허니소이닭가슴살 등 닭가슴살이 들어간 음식들이 반환됩니다.
